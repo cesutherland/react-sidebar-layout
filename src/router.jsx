@@ -1,5 +1,5 @@
 // Dependencies:
-import { Router, Route, browserHistory } from 'react-router';
+import { Router, Route, hashHistory } from 'react-router';
 import React  from 'react';
 
 // Pages:
@@ -23,7 +23,7 @@ module.exports = function (mediator) {
 
   return () => {
     return (
-       <Router history={browserHistory} routes={routes} />
+       <Router history={hashHistory} routes={routes} />
     );
   };
 };
