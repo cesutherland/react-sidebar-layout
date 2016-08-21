@@ -14,5 +14,15 @@ gib(gulp, {
   less: {
     src: './src/index.less',
     dest: './public/app.css'
+  },
+  html: {
+    name: 'assets',
+    src: './src/index.html',
+    dest: './public'
+  },
+  fonts: {
+    name: 'assets',
+    src: './node_modules/bootstrap/fonts/*',
+    dest: './public/fonts'
   }
 });

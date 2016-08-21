@@ -6,9 +6,7 @@ module.exports = ({page, route: { mediator }}) => (
     <div className={mediator.sidebar ? 'sidebar sidebar-expanded' : 'sidebar'}>
       <div className="sidebar-header">
         <h2>
-          <span className="sidebar-toggle" onClick={function () { mediator.sidebar = !mediator.sidebar; mediator.render(); }}>
-            &lt;-
-          </span>
+          <span className="glyphicon glyphicon-chevron-left sidebar-toggle" onClick={function () { mediator.sidebar = !mediator.sidebar; mediator.render(); }}></span>
           App Shell
         </h2>
       </div>
@@ -23,8 +21,7 @@ module.exports = ({page, route: { mediator }}) => (
       </div>
     </div>
     <div className="sidebar-toggle" onClick={function () { mediator.sidebar = !mediator.sidebar; mediator.render(); }}>
-      Menu
-      {/*<span className="glyphicon glyphicon-menu-hamburger">M</span>*/}
+      <span className="glyphicon glyphicon-menu-hamburger"></span>
     </div>
     <div className="content">
       <div className="body container-fluid">
