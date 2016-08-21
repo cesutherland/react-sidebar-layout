@@ -1,5 +1,5 @@
-import { browserHistory, Router, Route, Link, IndexLink } from 'react-router'
-import React from 'react';
+import React  from 'react';
+import { Link, IndexLink } from 'react-router'
 
 module.exports = ({page, route: { mediator }}) => (
   <div className="app">

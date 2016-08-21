@@ -1,5 +1,8 @@
-import { Router, Route, Link, browserHistory } from 'react-router';
+// Dependencies:
+import { Router, Route, browserHistory } from 'react-router';
 import React  from 'react';
+
+// Pages:
 import layout from './layout.jsx';
 import about  from './about.jsx';
 
