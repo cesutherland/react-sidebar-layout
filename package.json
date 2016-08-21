@@ -1,7 +1,7 @@
 {
-  "name": "react-layout-doodle",
+  "name": "react-sidebar-layout",
   "version": "1.0.0",
-  "description": "",
+  "description": "A quick bootstrap sidebar layout with React.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\"",

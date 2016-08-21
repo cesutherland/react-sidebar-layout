@@ -3,13 +3,26 @@ import React  from 'react';
 import layout from './layout.jsx';
 import about  from './about.jsx';
 
-module.exports = function () {
-  return (
-    <Router history={browserHistory}>
-      <Route path="/" component={layout}>
-        <Route path="about" components={{page: about}} data={{name: 'test'}}>
-        </Route>
-      </Route>
-    </Router>
-  );
+module.exports = function (mediator) {
+
+  var routes = {
+    path: '/',
+    component: layout,
+    mediator: mediator,
+    childRoutes: [
+      {
+        path: 'about',
+        mediator: mediator,
+        component: {page: about}
+      }
+    ]
+  };
+
+  console.log(mediator);
+
+  return () => {
+    return (
+       <Router history={browserHistory} routes={routes} />
+    );
+  };
 };
