@@ -21,8 +21,6 @@ module.exports = function (mediator) {
     ]
   };
 
-  console.log(mediator);
-
   return () => {
     return (
        <Router history={browserHistory} routes={routes} />
