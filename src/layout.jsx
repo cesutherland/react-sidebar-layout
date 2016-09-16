@@ -2,7 +2,7 @@ import React  from 'react';
 import { Link, IndexLink } from 'react-router'
 
 module.exports = ({page, route: { mediator }}) => (
-  <div className="app">
+  <div className="app sidebar-app">
     <div className={mediator.sidebar ? 'sidebar sidebar-expanded' : 'sidebar'}>
       <div className="sidebar-header">
         <h2>
