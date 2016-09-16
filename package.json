@@ -12,10 +12,10 @@
   "devDependencies": {
     "babel-preset-react": "^6.11.1",
     "connect-history-api-fallback": "^1.3.0",
-    "gib": "^1.0.2",
-    "gib-recipe-assets": "^0.0.1",
-    "gib-recipe-browserify": "^0.0.6",
-    "gib-recipe-less": "^0.0.3",
+    "gib": "^1.0.5",
+    "gib-recipe-assets": "^0.0.2",
+    "gib-recipe-browserify": "^0.0.7",
+    "gib-recipe-less": "^0.0.4",
     "gib-recipe-server": "^0.0.5",
     "gulp": "^3.9.1"
   },

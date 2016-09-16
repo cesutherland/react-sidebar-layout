@@ -13,6 +13,7 @@ gib(gulp, {
   },
   less: {
     src: './src/index.less',
+    watch: './src/**/*.less',
     dest: './public/app.css'
   },
   html: {
