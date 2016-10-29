@@ -1,7 +1,7 @@
 import React  from 'react';
 import { Link, IndexLink } from 'react-router'
 
-module.exports = ({page, route: { mediator }}) => (
+module.exports = ({page, route: { mediator, childRoutes }}) => (
   <div className="app sidebar-app">
     <div className={mediator.sidebar ? 'sidebar sidebar-expanded' : 'sidebar'}>
       <div className="sidebar-header">
@@ -13,7 +13,9 @@ module.exports = ({page, route: { mediator }}) => (
       <div className="sidebar-content">
         <ul className="list-unstyled">
           <li><IndexLink to={`/`} activeClassName="active">Home</IndexLink></li>
-          <li><Link to={`/about`} activeClassName="active">About</Link></li>
+          {childRoutes.map(function(object, i){
+            return <li key={i}><Link to={'/' + object.path} activeClassName="active">{object.name}</Link></li>;
+          })}
         </ul>
       </div>
       <div className="sidebar-footer">

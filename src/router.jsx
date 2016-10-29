@@ -14,6 +14,7 @@ module.exports = function (mediator) {
     mediator: mediator,
     childRoutes: [
       {
+        name: 'About',
         path: 'about',
         mediator: mediator,
         component: {page: about}
