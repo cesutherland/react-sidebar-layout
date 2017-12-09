@@ -1,12 +1,16 @@
 // Dependencies:
-import { Router, Route, hashHistory } from 'react-router';
+import { BrowserRouter as Router } from 'react-router-dom';
 import React  from 'react';
+import layout from './layout.jsx';
+import buildRoutes from './routes';
 
 // Pages:
-import routes from './routes';
 
 module.exports = function (mediator) {
+  const routes = buildRoutes(mediator);
   return (
-     <Router history={hashHistory} routes={routes(mediator)} />
+     <Router>
+       {layout(mediator, routes)}
+     </Router>
   );
 };

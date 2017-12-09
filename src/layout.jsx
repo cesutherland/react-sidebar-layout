@@ -1,7 +1,8 @@
 import React  from 'react';
-import { Link, IndexLink } from 'react-router'
+import { Switch } from 'react-router';
+import { Route, Link} from 'react-router-dom';
 
-module.exports = ({page, route: { mediator, childRoutes }}) => (
+module.exports = (mediator, routes) => (
   <div className="app sidebar-app">
     <div className={mediator.sidebar ? 'sidebar sidebar-expanded' : 'sidebar'}>
       <div className="sidebar-header">
@@ -12,10 +13,9 @@ module.exports = ({page, route: { mediator, childRoutes }}) => (
       </div>
       <div className="sidebar-content">
         <ul className="list-unstyled">
-          <li><IndexLink to={`/`} activeClassName="active">Home</IndexLink></li>
-          {childRoutes.map(function(object, i){
-            return <li key={i}><Link to={'/' + object.path} activeClassName="active">{object.name}</Link></li>;
-          })}
+          {routes.map((route, index) => (
+            <li key={index}><Link to={route.path}>{route.name}</Link></li>
+          ))}
         </ul>
       </div>
       <div className="sidebar-footer">
@@ -29,7 +29,16 @@ module.exports = ({page, route: { mediator, childRoutes }}) => (
       <div className="body container-fluid">
         <div className="row">
           <div className="col-sm-12">
-            {page || <h1>Welcome</h1>}
+            <Switch>
+            {routes.map((route, index) => (
+              <Route
+                exact={route.exact}
+                key={index}
+                path={route.path}
+                component={route.component(mediator)}
+              />
+            ))}
+            </Switch>
           </div>
         </div>
       </div>
