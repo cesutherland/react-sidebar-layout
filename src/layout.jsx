@@ -2,7 +2,7 @@ import React  from 'react';
 import { Switch } from 'react-router';
 import { Route, Link} from 'react-router-dom';
 
-module.exports = (mediator, routes) => (
+module.exports = (mediator, routes, footer, sidebar) => (
   <div className="app sidebar-app">
     <div className={mediator.sidebar ? 'sidebar sidebar-expanded' : 'sidebar'}>
       <div className="sidebar-header">
@@ -17,9 +17,10 @@ module.exports = (mediator, routes) => (
             <li key={index}><Link to={route.path}>{route.name}</Link></li>
           ))}
         </ul>
+        {sidebar || ''}
       </div>
       <div className="sidebar-footer">
-        <a>Logout</a>
+        {footer || ''}
       </div>
     </div>
     <div className="sidebar-toggle" onClick={function () { mediator.sidebar = !mediator.sidebar; mediator.render(); }}>
